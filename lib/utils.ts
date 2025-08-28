@@ -66,13 +66,13 @@ export const formatDateTime = (dateString: Date) => {
 };
 
 export function formatAmount(amount: number): string {
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
+  const formatter = new Intl.NumberFormat("fr-MG", {
+    style: "decimal", // Changé de "currency" à "decimal"
+    minimumFractionDigits: 0, // Ariary n'utilise généralement pas de décimales
+    maximumFractionDigits: 0,
   });
-
-  return formatter.format(amount);
+  
+  return formatter.format(amount) + " Ar"; // Ajouter "Ar" manuellement
 }
 
 export const parseStringify = (value: any) => JSON.parse(JSON.stringify(value));
