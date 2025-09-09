@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,6 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import Footer from './Footer'
 
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname()
@@ -72,7 +74,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
               USER
             </nav>
 
-            FOOTER
+            <Footer user={user} type="mobile"/>
           </div>
         </SheetContent>
       </Sheet>
